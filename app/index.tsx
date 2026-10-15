@@ -32,7 +32,7 @@ export default function HomeScreen() {
   } = useTasks();
 
   return (
-    <View className="flex-1 bg-gray-50">
+    <View className="flex-1 bg-gray-50 dark:bg-gray-950">
       <FilterBar
         filter={filter}
         onChange={setFilter}

@@ -81,7 +81,7 @@ export default function FormScreen() {
 
   if (loading) {
     return (
-      <View className="flex-1 items-center justify-center bg-gray-50">
+      <View className="flex-1 items-center justify-center bg-gray-50 dark:bg-gray-950">
         <ActivityIndicator size="large" color="#4f46e5" />
       </View>
     );
@@ -89,11 +89,11 @@ export default function FormScreen() {
 
   return (
     <KeyboardAvoidingView
-      className="flex-1 bg-gray-50"
+      className="flex-1 bg-gray-50 dark:bg-gray-950"
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <ScrollView contentContainerClassName="p-4" keyboardShouldPersistTaps="handled">
-        <Text className="text-sm font-semibold text-gray-700 mb-2">Título *</Text>
+        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Título *</Text>
         <TextInput
           value={title}
           onChangeText={setTitle}
@@ -101,10 +101,10 @@ export default function FormScreen() {
           placeholderTextColor="#9ca3af"
           autoFocus={!isEditing}
           maxLength={100}
-          className="bg-white rounded-xl px-4 py-3 text-base text-gray-800 border border-gray-200 mb-5"
+          className="bg-white dark:bg-gray-900 rounded-xl px-4 py-3 text-base text-gray-800 dark:text-gray-100 border border-gray-200 dark:border-gray-700 mb-5"
         />
 
-        <Text className="text-sm font-semibold text-gray-700 mb-2">Descrição</Text>
+        <Text className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">Descrição</Text>
         <TextInput
           value={description}
           onChangeText={setDescription}
@@ -112,7 +112,7 @@ export default function FormScreen() {
           placeholderTextColor="#9ca3af"
           multiline
           textAlignVertical="top"
-          className="bg-white rounded-xl px-4 py-3 text-base text-gray-800 border border-gray-200 mb-8 min-h-32"
+          className="bg-white dark:bg-gray-900 rounded-xl px-4 py-3 text-base text-gray-800 dark:text-gray-100 border border-gray-200 dark:border-gray-700 mb-8 min-h-32"
         />
 
         <TouchableOpacity

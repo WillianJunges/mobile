@@ -18,7 +18,7 @@ const OPTIONS: { value: TaskFilter; label: string }[] = [
 // Barra com os três filtros; o botão ativo fica com fundo índigo e texto branco
 export function FilterBar({ filter, onChange, counts }: FilterBarProps) {
   return (
-    <View className="flex-row gap-2 px-4 py-3 bg-white border-b border-gray-100">
+    <View className="flex-row gap-2 px-4 py-3 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
       {OPTIONS.map(({ value, label }) => {
         const active = filter === value;
         return (
@@ -26,12 +26,12 @@ export function FilterBar({ filter, onChange, counts }: FilterBarProps) {
             key={value}
             onPress={() => onChange(value)}
             className={`flex-1 items-center rounded-full py-2 ${
-              active ? 'bg-indigo-600' : 'bg-gray-100'
+              active ? 'bg-indigo-600' : 'bg-gray-100 dark:bg-gray-800'
             }`}
           >
             <Text
               className={`text-sm font-semibold ${
-                active ? 'text-white' : 'text-gray-600'
+                active ? 'text-white' : 'text-gray-600 dark:text-gray-300'
               }`}
             >
               {label} ({counts[value]})

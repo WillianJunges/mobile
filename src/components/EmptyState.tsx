@@ -34,7 +34,7 @@ export function EmptyState({ filter }: EmptyStateProps) {
   return (
     <View className="flex-1 items-center justify-center px-8 py-16">
       <Text className="text-6xl mb-4">{emoji}</Text>
-      <Text className="text-xl font-bold text-gray-700 text-center mb-2">
+      <Text className="text-xl font-bold text-gray-700 dark:text-gray-200 text-center mb-2">
         {title}
       </Text>
       <Text className="text-sm text-gray-400 text-center leading-5">

@@ -28,11 +28,11 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
   };
 
   return (
-    <View className="flex-row items-start bg-white mx-4 mt-3 p-4 rounded-2xl shadow-sm">
+    <View className="flex-row items-start bg-white dark:bg-gray-900 mx-4 mt-3 p-4 rounded-2xl shadow-sm">
       <TouchableOpacity
         onPress={() => onToggle(task.id, task.completed)}
         className={`w-6 h-6 mr-3 mt-0.5 rounded-full border-2 items-center justify-center ${
-          done ? 'bg-indigo-600 border-indigo-600' : 'border-gray-300'
+          done ? 'bg-indigo-600 border-indigo-600' : 'border-gray-300 dark:border-gray-600'
         }`}
       >
         {done && <Text className="text-white text-xs font-bold">✓</Text>}
@@ -41,13 +41,13 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
       <View className="flex-1">
         <Text
           className={`text-base font-semibold ${
-            done ? 'text-gray-400 line-through' : 'text-gray-800'
+            done ? 'text-gray-400 line-through' : 'text-gray-800 dark:text-gray-100'
           }`}
         >
           {task.title}
         </Text>
         {task.description ? (
-          <Text className="text-sm text-gray-500 mt-1">{task.description}</Text>
+          <Text className="text-sm text-gray-500 dark:text-gray-400 mt-1">{task.description}</Text>
         ) : null}
         <Text className="text-xs text-gray-400 mt-2">
           {formatDate(task.createdAt)}
